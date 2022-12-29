@@ -1,0 +1,409 @@
+/* 
+  ========================================
+Обнуление стилей http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+  License: none (public domain)
+  ========================================
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+  ========================================
+  Пользовательские стили
+  ========================================
+*/
+
+body {
+	font: 300 16px/22px "Roboto", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 0 auto;
+  max-width: 960px;
+  background: #f1f1f1
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  min-height: calc(100vh - 52px);
+}
+
+.container {
+  /*margin: 0 auto;*/
+}
+
+.line {
+    border-bottom: 1px dotted #99a;
+    padding: 3px;
+}
+/*
+  ========================================
+  Заголовок
+  ========================================
+*/
+
+.title {
+  padding: 50px 0 0 0;
+
+}
+.title__cont {
+  color: #005fd6;
+  display: flex;
+  margin: 0 1%;
+}
+.title__logo {
+  
+  /*min-width: 100%*/
+  flex-shrink: 0.3;
+}
+.title__head {
+   padding: 8px;
+   font-size: 25px;
+}
+.title__pic {
+  /*min-width: 100%;*/
+  height: 350px;
+  margin: 0;
+  /*padding: 0 0 10% 0;*/
+  overflow: hidden;
+  position: relative;
+}
+.title__pic img {
+  height: 100%;
+  /*object-fit: cover;*/
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.title__text {
+  flex-shrink: 0.7;
+  padding: 55px 0 10px 20px;
+  font-size: 18px;
+  text-align: justify;
+}
+.title__text p {
+  color: #000;
+  font-size: 17px;
+  margin: 0 0 10px 0;
+}
+@media (max-width: 767px){
+  .title {
+    padding: 45px 0 0 0;
+  }
+  .title__logo {
+    max-width: 150px;
+    /*flex-shrink: 0.5;*/
+    padding: 10px 0 10px;
+    font-size: 30px;
+  }
+  .title__head {
+   padding: 2px;
+   font-size: 20px;
+}
+  .title__text {
+    width: 100%;
+    /*flex-shrink: 0.5;*/
+    padding: 45px 0 5px 10px;
+    font-size: 15px;
+  }
+  .title__pic {
+    height: 160px;
+    margin: 0;
+  }
+}
+
+/*
+  ========================================
+  Верхнее меню навигации
+  ========================================
+*/
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+.header:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.header__body {
+  background-color: #ff7600;
+  position: relative;
+  height: 45px;
+}
+.header__menu {
+  max-width: 960px;
+  margin: 0px auto;
+}
+
+.header__burger {
+  display: none;
+}
+
+.header__list {
+  padding: 11px 0;
+  display: flex;
+  position: relative;
+  z-index: 2;
+  font-weight: 500;
+}
+
+.header__list li {
+  list-style: none;
+  margin: 0 0 0 30px;
+}
+.header__list li:first-child {
+  margin: 0 0 0 10px;
+}
+
+.header__link {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.header__list a:hover {
+  color: #1bc34f;
+  transition: 0.1s;
+}
+
+/*
+  ========================================
+  Адаптив под экран меньше 768px Меню бургер
+  ========================================
+*/
+
+@media (max-width: 767px){
+  body.lock {
+    overflow: hidden;
+  }
+  .header__body {
+    height: 33px;
+    padding: 12px 0 0 10px;
+  }
+  
+  .header__burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    z-index: 3;
+  }
+  .header__burger span {
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+    transition: all 0.3s ease 0s;
+  }
+  .header__burger:before,
+  .header__burger:after {
+    content: '';
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transition: all 0.3s ease 0s;
+  }
+  .header__burger:before {
+    top: 0;
+  }
+  .header__burger:after {
+    bottom: 0;
+  }
+  .header__burger.active span {
+    transform: scale(0);
+  }
+  .header__burger.active:before {
+    transform: rotate(45deg);
+    top: 9px;
+  }
+  .header__burger.active:after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+  }
+  .header__menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    overflow: auto;
+    background-color: #ff7600;
+    padding: 20px 10px 10px 10px;
+    transition: all 0.3s ease 0s;
+  }
+  .header__menu.active {
+    top: 0;
+
+  }
+  .header__list {
+    display: block;
+  }
+  .header__list li:first-child {
+    padding: 20px 0 0 0;
+  }
+  .header__list li {
+    margin: 0 0 20px 0;
+  }
+  .header__link {
+    font-size: 24px;
+  }
+}
+
+
+/*
+  ========================================
+  Кнопки
+  ========================================
+*/
+
+
+
+/*
+  ========================================
+  Основная часть
+  ========================================
+*/
+
+
+.main__text {
+  text-align: justify;
+  padding: 10px 15px;
+}
+.main__text p {
+  margin: 0 0 10px 0;
+}
+
+/*
+  ========================================
+  Таблицы
+  ========================================
+*/
+
+
+/*
+  ========================================
+  Сетка для создания правой колонки в общем потоке документа
+  ========================================
+*/
+
+
+
+
+/*
+ ========================================
+ Колонка справа в сетке
+ ========================================
+*/
+
+
+/*
+  ========================================
+  Ссылки
+  ========================================
+*/
+
+
+
+/*
+  ========================================
+  Основной подвал (очитска float)
+  ========================================
+*/
+.footer {
+    margin-bottom: 0;
+}
+
+
+.footer__row {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+
+}
+.footer__column {
+  flex: 0 1 50%;
+}
+
+.footer__logo {
+  position: relative;
+  overflow: hidden;
+  width: 60px;
+  height: 45px;
+}
+.footer__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+.footer__text {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+.footer__sign {
+  
+}
+.sign__content {
+  display: flex;
+  justify-content:center;
+}
+
+@media (max-width: 565px){
+  .footer__row {
+    display: flex;
+    flex-direction: column;
+  }
+}
