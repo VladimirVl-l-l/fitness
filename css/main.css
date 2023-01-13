@@ -323,7 +323,17 @@ body {
 .main__text p {
   margin: 0 0 10px 0;
 }
-
+.main__list {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+.main__list p {
+  margin: 0 0 10px 0;
+}
+.main__list span {
+  margin: 10px;
+}
 /*
   ========================================
   Таблицы
